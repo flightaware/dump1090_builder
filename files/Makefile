@@ -24,8 +24,9 @@ dbin=$(src)/bin
 docsrc=$(src)/share/man/man1
 tclsh=tclsh8.5
 
-dump1090share_src=$(src)/share/dump1090
-dump1090sharedir = $(sharedir)/dump1090
+htmlsrc=$(src)/share/dump1090/public_html
+htmldest = $(sharedir)/dump1090/public_html
+htmllongpath = $(htmldest)/coolclock
 
 all: install
 
@@ -41,7 +42,7 @@ install:
 	install -d $(DESTDIR)$(launch_lib_dir)
 	install -d $(DESTDIR)/etc/init.d
 	install -d $(DESTDIR)$(man1dir)
-	install -d $(DESTDIR)$(dump1090sharedir)
+	install -d $(DESTDIR)$(htmllongpath)
 
 	install -m 0444 -t $(DESTDIR)$(launch_lib_dir) $(llib)/tcllauncher.tcl $(llib)/libTcllauncher1.4.so $(llib)/tcllauncher-support.tcl $(llib)/pkgIndex.tcl
 	install -t $(DESTDIR)$(bindir) $(dbin)/piaware $(dbin)/piaware-config  $(dbin)/piaware-status $(dbin)/faup1090 $(dbin)/dump1090
@@ -51,5 +52,5 @@ install:
 	install -m 0444 -t $(DESTDIR)$(piawarestatus_lib) $(piawarestatus_src)/main.tcl $(piawarestatus_src)/helpers.tcl
 	install -t $(DESTDIR)/etc/init.d $(cwd)/etc/init.d/piaware
 	install -m 0444 -t $(DESTDIR)$(man1dir) $(docsrc)/*.1.gz
-	install -m 0444 -t $(DESTDIR)$(dump1090sharedir) $(dump1090share_src)
-
+	install -m 0444 -t $(DESTDIR)$(htmldest) $(htmlsrc)/config.js  $(htmlsrc)/extension.js  $(htmlsrc)/options.js  $(htmlsrc)/script.js $(htmlsrc)/gmap.html	 $(htmlsrc)/planeObject.js  $(htmlsrc)/style.css
+	install -m 0444 -t $(DESTDIR)$(htmllongpath) $(htmlsrc)/coolclock/coolclock.js  $(htmlsrc)/coolclock/excanvas.js  $(htmlsrc)/coolclock/moreskins.js
