@@ -1,0 +1,24 @@
+#!/usr/bin/perl
+
+use strict;
+use warnings;
+
+open( FILE, "</home/karl/lintian.log");
+open( ERR, ">/home/karl/linterr" );
+open( WARN, ">/home/karl/lintwarn" );
+
+foreach my $line( <FILE> )
+{
+	if( $line =~ /^[E]/ )
+	{
+		print ERR $line;
+	}
+	if( $line =~ /^[W]/ && $line !~ /dh-make-template-in-source/ )
+	{
+		print WARN $line;
+	}
+}
+close ERR;
+close WARN;
+close FILE;
+print "Done!\n";
