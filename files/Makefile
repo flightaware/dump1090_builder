@@ -5,7 +5,7 @@ bindir = $(prefix)/bin
 sharedir = $(prefix)/share
 mandir = $(sharedir)/man
 man1dir = $(mandir)/man1
-launch_lib_dir = $(prefix)/lib/Tcllauncher1.4
+launch_lib_dir = $(prefix)/lib/Tcllauncher1.5
 
 pkg_lib=$(libdir)/fa_adept_packages
 ad_lib=$(libdir)/piaware-config
@@ -18,7 +18,7 @@ lib=$(src)/lib
 plib=$(lib)/fa_adept_packages
 clib=$(lib)/piaware
 alib=$(lib)/piaware-config
-llib=$(lib)/Tcllauncher1.4
+llib=$(lib)/Tcllauncher1.5
 piawarestatus_src=$(lib)/piaware-status
 dbin=$(src)/bin
 docsrc=$(src)/share/man/man1
@@ -44,7 +44,7 @@ install:
 	install -d $(DESTDIR)$(man1dir)
 	install -d $(DESTDIR)$(htmllongpath)
 
-	install -m 0444 -t $(DESTDIR)$(launch_lib_dir) $(llib)/tcllauncher.tcl $(llib)/libTcllauncher1.4.so $(llib)/tcllauncher-support.tcl $(llib)/pkgIndex.tcl
+	install -m 0444 -t $(DESTDIR)$(launch_lib_dir) $(llib)/tcllauncher.tcl $(llib)/tcllauncher-support.tcl $(llib)/pkgIndex.tcl
 	install -t $(DESTDIR)$(bindir) $(dbin)/piaware $(dbin)/piaware-config  $(dbin)/piaware-status $(dbin)/faup1090 $(dbin)/dump1090
 	install -m 0444 -t $(DESTDIR)$(client_lib) $(clib)/main.tcl $(clib)/health.tcl $(clib)/faup1090.tcl $(clib)/helpers.tcl $(clib)/config.tcl
 	install -m 0444 -t $(DESTDIR)$(pkg_lib) $(plib)/DigiCertCA.crt $(plib)/pkgIndex.tcl $(plib)/fa_adept_config.tcl $(plib)/fa_adept_client.tcl $(plib)/piaware.tcl

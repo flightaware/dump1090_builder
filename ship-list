@@ -33,10 +33,9 @@ usr/lib/fa_adept_packages/fa_adept_config.tcl
 usr/lib/fa_adept_packages/fa_adept_client.tcl
 usr/lib/fa_adept_packages/piaware.tcl
 
-usr/lib/Tcllauncher1.4/tcllauncher.tcl
-usr/lib/Tcllauncher1.4/libTcllauncher1.4.so
-usr/lib/Tcllauncher1.4/tcllauncher-support.tcl
-usr/lib/Tcllauncher1.4/pkgIndex.tcl
+usr/lib/Tcllauncher1.5/tcllauncher.tcl
+usr/lib/Tcllauncher1.5/tcllauncher-support.tcl
+usr/lib/Tcllauncher1.5/pkgIndex.tcl
 
 etc/init.d/piaware
 
