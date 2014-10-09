@@ -38,8 +38,13 @@ usr/lib/Tcllauncher1.5/tcllauncher-support.tcl
 usr/lib/Tcllauncher1.5/pkgIndex.tcl
 
 etc/init.d/piaware
+etc/init.d/fadump1090.sh
 
 usr/share/man/man1/faup1090.1.gz
 usr/share/man/man1/piaware.1.gz
 usr/share/man/man1/piaware-config.1.gz
 usr/share/man/man1/piaware-status.1.gz
+
+/usr/lib/librtlsdr.so
+/usr/lib/librtlsdr.so.0
+/usr/lib/librtlsdr.so.0.5git

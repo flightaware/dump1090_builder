@@ -11,4 +11,4 @@ Homepage: https://github.com/flightaware
 Package: dump1090
 Architecture: armhf
 Depends: ${shlibs:Depends}, ${misc:Depends}, net-tools, tclx8.4, tcl8.5, tcllib, tcl-tls, raspi-copies-and-fills, itcl3, libssl1.0.0
-Description: dump1090 Mode S decoder for RTLSDR devices packaged as a Debian package for Raspberry Pi plus piaware - Open Aviation Data Exchange Protocol for ADS-B FlightFeeders. The client-side portion of fa_adept that sends aviation data via compressed, encrypted TLS sockets.
+Description: Networked Aviation Mode S / ADS-B decoder/translator with RTL-SDR device support plus piaware, software to forward Mode S / ADS-B messages to FlightAware over a compressed, encrypted TLS connection.
