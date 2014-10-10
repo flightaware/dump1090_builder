@@ -1,7 +1,3 @@
-usr/bin/piaware
-usr/bin/piaware-config
-usr/bin/piaware-status
-usr/bin/faup1090
 usr/bin/dump1090
 
 usr/share/dump1090/public_html/options.js
@@ -15,35 +11,7 @@ usr/share/dump1090/public_html/coolclock/moreskins.js
 usr/share/dump1090/public_html/coolclock/excanvas.js
 usr/share/dump1090/public_html/coolclock/coolclock.js
 
-usr/lib/piaware/main.tcl
-usr/lib/piaware/faup1090.tcl
-usr/lib/piaware/helpers.tcl
-usr/lib/piaware/health.tcl
-usr/lib/piaware/config.tcl
-
-usr/lib/piaware-config/main.tcl
-usr/lib/piaware-config/helpers.tcl
-
-usr/lib/piaware-status/main.tcl
-usr/lib/piaware-status/helpers.tcl
-
-usr/lib/fa_adept_packages/DigiCertCA.crt
-usr/lib/fa_adept_packages/pkgIndex.tcl
-usr/lib/fa_adept_packages/fa_adept_config.tcl
-usr/lib/fa_adept_packages/fa_adept_client.tcl
-usr/lib/fa_adept_packages/piaware.tcl
-
-usr/lib/Tcllauncher1.5/tcllauncher.tcl
-usr/lib/Tcllauncher1.5/tcllauncher-support.tcl
-usr/lib/Tcllauncher1.5/pkgIndex.tcl
-
-etc/init.d/piaware
 etc/init.d/fadump1090.sh
-
-usr/share/man/man1/faup1090.1.gz
-usr/share/man/man1/piaware.1.gz
-usr/share/man/man1/piaware-config.1.gz
-usr/share/man/man1/piaware-status.1.gz
 
 /usr/lib/librtlsdr.so
 /usr/lib/librtlsdr.so.0
