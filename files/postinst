@@ -21,7 +21,6 @@ set -e
 case "$1" in
     configure)
 	update-rc.d fadump1090.sh defaults >/dev/null
-	update-rc.d piaware defaults >/dev/null
     ;;
 
     abort-upgrade|abort-remove|abort-deconfigure)

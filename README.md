@@ -19,11 +19,10 @@ Install base packages
 
 ## Update version numbers
 
-* fa_adept/programs/piaware/config.tcl
 * dump1090_mr/faup1090.h
 
 To change the package version and/or package name
-change PKG and/or VERSION in to top level of piaware_builder:
+change PKG and/or VERSION in to top level of dump1090_builder:
 * Makefile
 * shellrc
 		
@@ -43,24 +42,6 @@ make -f makefaup1090
 sudo make -f makefaup1090 full-install
 ```
 
-## fix up tcllauncher
-
-### add debian protection flags to Makefile and rebuild
-
-Run dpkg-buildflags, copy and paste it into the bottom of the Makefile
-and change the CFLAGS=, CPPFLAGS=, etc, to CFLAGS+=, CPPFLAGS+=, etc,
-then do
-
-```
-make clean
-make
-sudo make install
-```
-
-### remove rpath from tcllauncher executables
-
-* sudo chrpath --delete /usr/bin/tcllauncher /usr/bin/piaware*
-
 ## Possibly change the list of files that will be shipped
 
 To change the actual contents of the debian package, edit:
@@ -71,7 +52,7 @@ To change the actual contents of the debian package, edit:
 
 To create a new .deb package:
 
-* Create a src directory in your home directory and clone piaware_builder there.
+* Create a src directory in your home directory and clone dump1090_builder there.
 
 ```
 make pkg
@@ -85,7 +66,7 @@ correctly-formatted tarball with a name that dh_make recognizes.
 'xfer' copies over some files necessary for the debian package to build, 
 and then runs "dpkg-buildpackage -rfakeroot"
 
-It also creates the package directory with the expected name and format (piaware-1.12/)
+It also creates the package directory with the expected name and format (fadump1090-1.12/)
 
 There''s a pause during the process where I copy in a debian changelog.
 

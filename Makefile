@@ -6,14 +6,6 @@ VERSION=1.0
 SUBVERSION=1
 PKGNAME="${PKG}-${VERSION}-${SUBVERSION}"
 
-PKG_LIB=$(LIB)/fa_adept_packages
-AD_LIB=$(LIB)/piaware-config
-CLIENT_LIB=$(LIB)/piaware
-
-PLIB=debian/$(PKG_LIB)
-CLIB=debian/$(CLIENT_LIB)
-ALIB=debian/$(AD_LIB)
-
 TCLSH=tclsh8.5
 
 pkg:   ship-list
