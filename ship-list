@@ -13,6 +13,8 @@ usr/share/dump1090/public_html/coolclock/coolclock.js
 
 etc/init.d/fadump1090.sh
 
-/usr/lib/librtlsdr.so
-/usr/lib/librtlsdr.so.0
-/usr/lib/librtlsdr.so.0.5git
+usr/lib/librtlsdr.so
+usr/lib/librtlsdr.so.0
+usr/lib/librtlsdr.so.0.5git
+
+usr/share/man/man1/dump1090.1.gz
