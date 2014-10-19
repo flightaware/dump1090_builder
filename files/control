@@ -11,4 +11,14 @@ Homepage: https://github.com/flightaware
 Package: dump1090
 Architecture: armhf
 Depends: ${shlibs:Depends}, ${misc:Depends}, net-tools, tclx8.4, tcl8.5, tcllib, tcl-tls, raspi-copies-and-fills, itcl3, libssl1.0.0
-Description: Networked Aviation Mode S / ADS-B decoder/translator with RTL-SDR device support
+Description: ADS-B Ground Station System for RTL-SDR
+ Networked Aviation Mode S / ADS-B decoder/translator with RTL-SDR software
+ defined radio USB device support plus piaware, software to forward
+ Mode S / ADS-B messages to FlightAware over a compressed, encrypted
+ TLS connection.
+ .
+ Includes a mini-webserver that you can access to see aircraft in the vicinity
+ of your receiver.
+ .
+ t automatically shares data with FlightAware and can be used/configured
+ to share messages with other services.
