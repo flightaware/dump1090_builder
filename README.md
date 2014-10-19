@@ -30,14 +30,27 @@ change PKG and/or VERSION in to top level of dump1090_builder:
 		
 ## Make sure all involved packages are up to date
 
-On a Raspberry Pi make sure you have installed all the software that
-contributes to this build.  This includes:
+### build and install RTL-SDR libraries
 
-* build and install rtlsdr, git clone git://git.osmocom.org/rtl-sdr.git
-* build and install dump1090 and faup1090 by cloning the repo from
-https://github.com/flightaware/dump1090_mr and doing
+We build these with a prefix of /usr instead of the default /usr/local because Linux.
 
 ```
+git clone git://git.osmocom.org/rtl-sdr.git
+cd rtl-sdr
+mkdir build
+cd build
+cmake -DCMAKE_INSTALL_PREFIX:PATH=/usr ..
+make all
+sudo make install
+```
+
+### build and install dump1090, FA-style
+
+On your Raspberry Pi build and install dump1090
+
+```
+git clone https://github.com/flightaware/dump1090_mr
+cd dump1090_mr
 make
 make -f makefaup1090
 sudo make -f makefaup1090 full-install
