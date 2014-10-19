@@ -2,7 +2,7 @@ Source: dump1090
 Section: embedded
 Priority: extra
 Maintainer: FlightAware Developers <adsb-devs@flightaware.com>
-Build-Depends: debhelper(>=8), net-tools, tclx8.4, tcl8.5, tcllib, tcl-tls, raspi-copies-and-fills, itcl3, libssl1.0.0:armhf
+Build-Depends: debhelper(>=8), net-tools
 Standards-Version: 3.9.3
 Homepage: https://github.com/flightaware
 #Vcs-Git: git://git.debian.org/collab-maint/fa-adept-adsb.git
@@ -10,7 +10,7 @@ Homepage: https://github.com/flightaware
 
 Package: dump1090
 Architecture: armhf
-Depends: ${shlibs:Depends}, ${misc:Depends}, net-tools, tclx8.4, tcl8.5, tcllib, tcl-tls, raspi-copies-and-fills, itcl3, libssl1.0.0
+Depends: ${shlibs:Depends}, ${misc:Depends}, net-tools
 Description: ADS-B Ground Station System for RTL-SDR
  Networked Aviation Mode S / ADS-B decoder/translator with RTL-SDR software
  defined radio USB device support plus piaware, software to forward
