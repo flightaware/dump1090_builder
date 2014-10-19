@@ -1,8 +1,10 @@
-# Dump1090 + Piaware Debian Package Builder
+# Dump1090 Package Builder
 
-## Grotesquely Similar
+## FA version of dump1090
 
-This is pretty much a copy of piaware_builder but with a different ship list and stuff like that.
+This is a companion builder to the public github FlightAware fork of dump1090, dump1090_mr.
+
+PiAware can work with this or other versions of dump1090 or other programs that produce beast binary format on port 30005.
 
 ## Prerequisites
 
@@ -31,11 +33,10 @@ change PKG and/or VERSION in to top level of dump1090_builder:
 On a Raspberry Pi make sure you have installed all the software that
 contributes to this build.  This includes:
 
-* a 'make install-client' in fa_adept
-* a build and make install of tcllauncher
 * build and install rtlsdr, git clone git://git.osmocom.org/rtl-sdr.git
 * build and install dump1090 and faup1090 by cloning the repo from
 https://github.com/flightaware/dump1090_mr and doing
+
 ```
 make
 make -f makefaup1090
@@ -56,7 +57,7 @@ To create a new .deb package:
 
 ```
 make pkg
-cd fadump1090-1.12
+cd dump1090-1.0
 ../files/xfer
 ```
 
@@ -66,7 +67,7 @@ correctly-formatted tarball with a name that dh_make recognizes.
 'xfer' copies over some files necessary for the debian package to build, 
 and then runs "dpkg-buildpackage -rfakeroot"
 
-It also creates the package directory with the expected name and format (fadump1090-1.12/)
+It also creates the package directory with the expected name and format (dump1090-1.90/).
 
 There''s a pause during the process where I copy in a debian changelog.
 
