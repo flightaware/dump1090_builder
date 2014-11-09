@@ -1,3 +1,9 @@
+dump1090 (1.1-1) stable; urgency=low
+
+  * Install view1090 as part of the dump1090 package install
+
+ -- FlightAware Developers <adsb-devs@flightaware.com>  Sun, 9 Nov 2014 11:08:05 +0000
+
 dump1090 (1.0-1) stable; urgency=medium
 
   * Initial release of dump1090 Debian package.
