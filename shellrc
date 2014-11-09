@@ -1,6 +1,6 @@
 #!/bin/sh
 export PKG=dump1090
-export VERSION=1.0-1
+export VERSION=1.0-2
 export PKGNAME="${PKG}-${VERSION}"
 export DEBEMAIL="adsb-devs@flightaware.com"
 export DEBFULLNAME="FlightAware Developers"
