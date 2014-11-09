@@ -28,7 +28,7 @@ install:
 	install -d $(DESTDIR)$(man1dir)
 	install -d $(DESTDIR)$(htmllongpath)
 
-	install -t $(DESTDIR)$(bindir) $(dbin)/dump1090
+	install -t $(DESTDIR)$(bindir) $(dbin)/dump1090 $(dbin)/view1090
 	install -m 0444 -t $(DESTDIR)$(libdir) $(lib)/librtlsdr.so.0.5git
 	cd $(DESTDIR)$(libdir); ln -s librtlsdr.so.0.5git librtlsdr.so.0; ln -s librtlsdr.so.0 librtlsdr.so
 	install -t $(DESTDIR)/etc/init.d $(cwd)/etc/init.d/fadump1090.sh

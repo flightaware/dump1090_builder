@@ -1,4 +1,5 @@
 usr/bin/dump1090
+usr/bin/view1090
 
 usr/share/dump1090/public_html/options.js
 usr/share/dump1090/public_html/planeObject.js
