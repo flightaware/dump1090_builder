@@ -1,8 +1,25 @@
-dump1090 (1.0-2) stable; urgency=low
+dump1090 (1.1-1) stable; urgency=medium
 
-  * Install view1090 as part of the dump1090 package install
+  * auto-gain is now enabled for the RTL-SDR dongle, considerably extending
+    its range and message rate.  (Change made to the fadump1090.sh script)
 
- -- FlightAware Developers <adsb-devs@flightaware.com>  Sun, 9 Nov 2014 11:08:05 +0000
+  * Install view1090 as part of the dump1090 package install.  (View1090 is
+    nice for seeing what's going on when you're logged into your Raspberry Pi
+    or whatever you're running dump1090 on.)
+
+  * Add control to make Google Map full-screen.  (Clicking on the "handle"
+    barrier between the map and sidebar now shows and hides the sidebar.)
+
+  * Initialize tsvVerbatim to avoid the risk of writing garbage to FATSV
+    connections.  (Hat tip to github user "mutability" for the pull request.)
+
+  * within-dump1090 message buffering rate limits removed from the
+    fadump1090.sh script.  Those switches are more for Windows, anyway, and
+    could introduce unneeded latency.  (The FlightAware TSV upload tech
+    is already filtered and buffered.)
+
+
+ -- FlightAware Developers <adsb-devs@flightaware.com>  Tue, 6 Jan 2015 11:11:27 +0000
 
 dump1090 (1.0-1) stable; urgency=medium
 
