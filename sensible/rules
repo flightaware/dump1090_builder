@@ -10,11 +10,13 @@ include /usr/share/dpkg/buildflags.mk
 PYTHON3=/usr/bin/$(shell py3versions -d)
 PYTHON3VER=$(shell py3versions -vd)
 
-override_dh_auto_clean: clean_dump1090
+override_dh_auto_clean: 
 
-override_dh_auto_build: build_dump1090 
+override_dh_auto_configure: check_versions 
 
-override_dh_auto_install: install_dump1090 
+override_dh_auto_build: 
+
+override_dh_auto_install: install_dump1090
 
 check_versions:
 	debian/check_versions
