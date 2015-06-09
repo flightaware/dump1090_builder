@@ -1,0 +1,38 @@
+#!/usr/bin/make -f
+# -*- makefile -*-
+
+export DH_VERBOSE=1
+
+#export DEB_BUILD_MAINT_OPTIONS = hardening=+all
+#DPKG_EXPORT_BUILDFLAGS = 1
+include /usr/share/dpkg/buildflags.mk
+
+PYTHON3=/usr/bin/$(shell py3versions -d)
+PYTHON3VER=$(shell py3versions -vd)
+
+override_dh_auto_clean: clean_dump1090
+
+override_dh_auto_build: build_dump1090 
+
+override_dh_auto_install: install_dump1090 
+
+check_versions:
+	debian/check_versions
+
+install_dump1090:
+	make -C dump1090 DESTDIR=$(CURDIR)/debian/dump1090 install
+
+configure_%:
+	dh_auto_configure -D $*
+
+build_%:
+	dh_auto_build -D $*
+
+install_%:
+	dh_auto_install -D $*
+
+clean_%:
+	dh_auto_clean -D $*
+
+%:
+	dh $@ --without=python-support
