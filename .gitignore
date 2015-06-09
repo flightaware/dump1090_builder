@@ -1,0 +1,7 @@
+package
+*~
+dump1090*.changes
+dump1090*.deb
+dump1090*.tar.gz
+dump1090*.dsc
+dump1090*.build
