@@ -1,3 +1,13 @@
+dump1090 (1.2-1~dev) UNRELEASED; urgency=medium
+
+  * Identify incoming multilateration results and color those aircraft
+    differently in the side table.
+
+  * Disable the FATSV port by default; this functionality is now always run
+    in a separate faup1090 process provided by piaware.
+
+ -- Oliver Jowett <oliver@mutability.co.uk>  Wed, 01 Jul 2015 20:18:54 +0100
+
 dump1090 (1.1-1) stable; urgency=medium
 
   * auto-gain is now enabled for the RTL-SDR dongle, considerably extending

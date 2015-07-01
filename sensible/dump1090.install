@@ -1,0 +1,3 @@
+dump1090/dump1090 usr/bin
+dump1090/view1090 usr/bin
+dump1090/public_html/* usr/share/dump1090/public_html
