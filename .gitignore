@@ -2,3 +2,6 @@ package
 *~
 *.changes
 *.deb
+*.tar.gz
+*.build
+*.dsc
