@@ -20,4 +20,4 @@ override_dh_auto_clean:
 	$(MAKE) -C dump1090 clean
 
 override_dh_installinit:
-	dh_installinit --name=fadump1090
+	dh_installinit --name=fadump1090.sh
