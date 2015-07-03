@@ -27,7 +27,7 @@ OUTDIR=$TOP/package
 
 mkdir -p $OUTDIR
 
-clone_or_update https://github.flightaware.com/flightaware/dump1090_mr.git origin/master $OUTDIR/dump1090
+clone_or_update https://github.flightaware.com/flightaware/dump1090_mr.git dump1090-v1.2-2 $OUTDIR/dump1090
 
 # copy our control files
 rm -fr $OUTDIR/debian
