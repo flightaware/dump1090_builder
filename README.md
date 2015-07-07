@@ -6,84 +6,63 @@ This is a companion builder to the public github FlightAware fork of dump1090, d
 
 PiAware can work with this or other versions of dump1090 or other programs that produce beast binary format on port 30005.
 
-## Prerequisites
+## Checking everything is up to date
 
-Install base packages
-* dh-make
-* lintian
-* chrpath
-* dpkg-sig
+Update dump1090_builder/changelog if needed.
 
-## Update system just to be safe
+Check the clone_or_update calls in sensible-build.sh to check that it is
+including the correct repositories / branches.
 
-* sudo apt-get update
-* sudo apt-get upgrade
+## Prepare the package tree
 
-## Update version numbers
+Run dump1090_builder/sensible-build.sh. It will:
 
-* dump1090_mr/faup1090.h
+  create dump1090_builder/package/, the package directory
+  check out dump1090 into package/
+  copy some control files from dump1090_builder/sensible/ to package/debian/
+  copy the changelog from dump1090_builder/changelog to package/debian/changelog
 
-To change the package version and/or package name
-change PKG and/or VERSION in to top level of dump1090_builder:
-* Makefile
-* shellrc
-		
-## Make sure all involved packages are up to date
+If you are going to be building on another machine, you can copy the
+package directory there; it is selfcontained.
 
-### build and install RTL-SDR libraries
+## Check build prerequisites
 
-We build these with a prefix of /usr instead of the default /usr/local because Linux.
+Ensure that your build machine has the build dependencies mentioned in
+package/debian/control:
 
-```
-git clone git://git.osmocom.org/rtl-sdr.git
-cd rtl-sdr
-mkdir build
-cd build
-cmake -DCMAKE_INSTALL_PREFIX:PATH=/usr ..
-make all
-sudo make install
-```
+* build-essential
+* debhelper
+* librtlsdr-dev (you may need to build this yourself)
+* libusb-1.0-0-dev
+* pkg-config
 
-### build and install dump1090, FA-style
+If you use pdebuild it will do this for you.
 
-On your Raspberry Pi build and install dump1090
+## Build it
 
-```
-git clone https://github.com/flightaware/dump1090_mr
-cd dump1090_mr
-make
-make -f makefaup1090
-sudo make -f makefaup1090 full-install
-```
+Change to the package directory on your build machine and build with a
+debian package building tool of your choice:
 
-## Possibly change the list of files that will be shipped
+  $ dpkg-buildpackage -b
 
-To change the actual contents of the debian package, edit:
-* ship-list
-* files/Makefile
-	
-## Build the package
+or
 
-To create a new .deb package:
+  $ debuild
 
-* Create a src directory in your home directory and clone dump1090_builder there.
+or
 
-```
-make pkg
-cd dump1090-1.0
-../files/xfer
-```
+  $ pdebuild
 
-The make pkg, unpacks, and repacks the source code into a 
-correctly-formatted tarball with a name that dh_make recognizes.
+etc.
 
-'xfer' copies over some files necessary for the debian package to build, 
-and then runs "dpkg-buildpackage -rfakeroot"
+## Fixing problems
 
-It also creates the package directory with the expected name and format (dump1090-1.90/).
+If the build fails and you need to make some changes to fix it, you can
+directly edit the contents of the package directory and rebuild. Once
+you're happy you should commit the changes to the main repositories and
+rerun sensible-build.sh - it will update / re-checkout the clones in
+package/
 
-There''s a pause during the process where I copy in a debian changelog.
-
-The script offers to run lintian, which is a lint for debian packages.  It
-takes a while but is a good idea, of course.
-
+The repositories under package/ are deliberately checked out in detached-
+HEAD mode, both for sensibleness of updates and to discourage you from
+doing any major changes directly in there!
