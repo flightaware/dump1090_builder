@@ -17,10 +17,10 @@ including the correct repositories / branches.
 
 Run dump1090_builder/sensible-build.sh. It will:
 
-  create dump1090_builder/package/, the package directory
-  check out dump1090 into package/
-  copy some control files from dump1090_builder/sensible/ to package/debian/
-  copy the changelog from dump1090_builder/changelog to package/debian/changelog
+* create dump1090_builder/package/, the package directory
+* check out dump1090 into package/
+* copy some control files from dump1090_builder/sensible/ to package/debian/
+* copy the changelog from dump1090_builder/changelog to package/debian/changelog
 
 If you are going to be building on another machine, you can copy the
 package directory there; it is selfcontained.
