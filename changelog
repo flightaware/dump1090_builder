@@ -1,6 +1,11 @@
 dump1090 (1.2-3~dev) UNRELEASED; urgency=medium
 
-  * development version
+  * Compile in the FlightAware package version as the dump1090 version.
+
+  * Change the default port for Beast input to port 30104. This port is
+    the new default used by piaware to connect to a mlat-aware dump1090
+    (we are mlat-aware) to forward mlat results. To return to using port
+    30004, use the --net-bi-port option.
 
  -- Oliver Jowett <oliver@mutability.co.uk>  Thu, 17 Sep 2015 10:41:21 +0100
 
