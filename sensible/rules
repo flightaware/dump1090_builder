@@ -15,7 +15,7 @@ CHANGELOG_VERSION=$(shell dpkg-parsechangelog | sed -n 's/^Version: //p')
 	dh $@ 
 
 override_dh_auto_build:
-	$(MAKE) -C dump1090 EXTRACFLAGS='-DHTMLDIR=\"/usr/share/dump1090/public_html\" -DMODES_DUMP1090_VERSION=\"flightaware-$(CHANGELOG_VERSION)\"' dump1090 view1090
+	$(MAKE) -C dump1090 EXTRACFLAGS='-DHTMLPATH=\"/usr/share/dump1090/public_html\" -DMODES_DUMP1090_VERSION=\"flightaware-$(CHANGELOG_VERSION)\"' dump1090 view1090
 
 override_dh_auto_clean:
 	$(MAKE) -C dump1090 clean
