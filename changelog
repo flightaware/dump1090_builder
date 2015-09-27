@@ -1,4 +1,4 @@
-dump1090 (1.2-3~dev) UNRELEASED; urgency=medium
+dump1090 (1.2-3) unstable; urgency=medium
 
   * Compile in the FlightAware package version as the dump1090 version.
 
@@ -7,7 +7,7 @@ dump1090 (1.2-3~dev) UNRELEASED; urgency=medium
     (we are mlat-aware) to forward mlat results. To return to using port
     30004, use the --net-bi-port option.
 
- -- Oliver Jowett <oliver@mutability.co.uk>  Thu, 17 Sep 2015 10:41:21 +0100
+ -- Oliver Jowett <oliver@mutability.co.uk>  Mon, 28 Sep 2015 00:29:20 +0100
 
 dump1090 (1.2-2) unstable; urgency=medium
 
