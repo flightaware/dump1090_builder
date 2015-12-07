@@ -1,0 +1,20 @@
+# dump1090 service for systemd
+# install in /etc/systemd/system
+
+[Unit]
+Description=dump1090 ADS-B receiver (FlightAware fork)
+Documentation=https://flightaware.com/adsb/piaware/
+
+[Service]
+EnvironmentFile=/etc/default/dump1090-fa
+ExecStart=/usr/bin/dump1090-fa --quiet --net --net-fatsv-port 0 $DUMP1090_ARGS
+Type=simple
+Restart=on-failure
+# if there is no dongle attached, dump1090 will exit;
+# we don't want to be restarting it too often in that case.
+RestartSec=120
+User=nobody
+Nice=-5
+
+[Install]
+WantedBy=default.target

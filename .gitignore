@@ -1,4 +1,5 @@
-package
+package-wheezy
+package-jessie
 *~
 *.changes
 *.deb

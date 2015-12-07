@@ -23,7 +23,22 @@ clone_or_update() {
 
 # setup:
 
-OUTDIR=$TOP/package
+if [ $# -lt 1 ]
+then
+  echo "syntax: $0 <wheezy|jessie>" >&2
+  exit 1
+fi
+
+case $1 in
+  wheezy|jessie) dist=$1 ;;
+  *)
+    echo "unknown build distribution $1" >&2
+    echo "syntax: $0 <wheezy|jessie>" >&2
+    exit 1
+    ;;
+esac
+
+OUTDIR=$TOP/package-$dist
 
 mkdir -p $OUTDIR
 
@@ -34,8 +49,21 @@ rm -fr $OUTDIR/debian
 mkdir $OUTDIR/debian
 cp -r \
  $TOP/changelog \
- $TOP/sensible/* \
+ $TOP/common/* \
+ $TOP/$dist/* \
   $OUTDIR/debian
+
+case $dist in
+  wheezy)
+    echo "Updating changelog for wheezy backport build"
+    dch --changelog $OUTDIR/debian/changelog --bpo --distribution wheezy-backports "Automated backport build via dump1090_builder"
+    ;;
+  jessie)
+    ;;
+  *)
+    echo "You should fix the script so it knows about a distribution of $dist" >&2
+    ;;
+esac
 
 # ok, ready to go.
 echo "Ok, package is ready to be built in $OUTDIR"

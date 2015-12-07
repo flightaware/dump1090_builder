@@ -1,0 +1,2 @@
+# Additional dump1090 arguments may be specified here.
+DUMP1090_ARGS="--gain -10"
