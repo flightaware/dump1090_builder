@@ -35,6 +35,7 @@ package/debian/control:
 * librtlsdr-dev (you may need to build this yourself)
 * libusb-1.0-0-dev
 * pkg-config
+* devscripts
 
 If you use pdebuild it will do this for you.
 
