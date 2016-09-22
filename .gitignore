@@ -1,8 +1,0 @@
-package-wheezy
-package-jessie
-*~
-*.changes
-*.deb
-*.tar.gz
-*.build
-*.dsc
